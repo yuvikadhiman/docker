@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: frontend
+  template: 
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+       - name: frontend
+         image: yuvikadhiman25/kuber-frontend-app:latest
+        #  env:
+        #   - name: AUTH_ADDRESS
+        #   # value: "10.101.60.86"  manual cluster IP
+        #     value: "auth-service.default" 
+            
+
+            # value: localhost
+
+      #  - name: auth
+      #    image: yuvikadhiman25/kuber-auth-app:latest
+       
+        
+
